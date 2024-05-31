@@ -1,0 +1,65 @@
+.function {
+    color: #dcdcaa;
+}
+
+.keyword {
+    color: #569cd6;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.move {
+    position: absolute;
+    z-index: 9;
+}
+
+.movehead {
+    cursor: move;
+    z-index: 10;
+}
+
+.context-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.context-menu ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.context-menu ul li:hover {
+    background-color: #f0f0f0;
+}
+
+* {
+    font-size: inherit;
+    background-color: inherit;
+    color: inherit;
+}
+
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    font-size: xx-large;
+}
+
+#tb {
+    border: 0;
+}
+
+#tbi {
+    border: 0;
+}
