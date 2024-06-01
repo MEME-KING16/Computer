@@ -17,6 +17,7 @@ class Computer {
             "backgroundColor":"white",
             "fontSize":"16px",
             "fontColor":"black",
+            "backgroundimg":"",
         }
     }
     static dev = false

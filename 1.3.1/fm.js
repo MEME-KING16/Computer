@@ -5,7 +5,7 @@ document.addEventListener('click', () => {
 });
 function startfm() {
     Computer.addToRam(new Window("filemanager"))
-    document.getElementById(Computer.ram[Computer.ram.length - 1].headid).innerHTML = `<button onclick="interpreter.evaluate(interpreter.parse('call close ${Computer.ram[Computer.ram.length - 1].process}'));fmids.splice(${fmids.length-1}, 1)">Close</button>` 
+    document.getElementById(Computer.ram[Computer.ram.length - 1].headid).innerHTML = `<button onclick="" style="border:0;"><i class="fa-solid fa-minus"></i></i></button><button onclick="interpreter.evaluate(interpreter.parse('call close ${Computer.ram[Computer.ram.length - 1].process}'));fmids.splice(${fmids.length-1}, 1)" style="border:0;"><i class="fa-solid fa-x"></i></button>` 
     Computer.ram[Computer.ram.length-1].path = []
     fmids.push(Computer.ram[Computer.ram.length-1].process)
 const customMenu = document.getElementById('customMenu');
