@@ -3,7 +3,7 @@
 
 //addCode("close File Manager.exe", (id) => document.getElementById(id).remove())
 
-class Interpreter {
+class Interpreterv1 {
     constructor() {
         this.variables = {};
         this.constants = {};
@@ -181,7 +181,7 @@ class Interpreter {
 
   
   // Example usage
-  const interpreter = new Interpreter();
+  const interpreter = new Interpreterv1();
   //interpreter.evaluate(interpreter.parse('let x = 5'));
   //interpreter.evaluate(interpreter.parse('let y = 10'));
   //interpreter.evaluate(interpreter.parse('const z = true'));

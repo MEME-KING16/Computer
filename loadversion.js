@@ -1,5 +1,5 @@
 const latestversion = "1.3";
-const latestdevversion = "1.3";
+const latestdevversion = "1.3.1";
 const patchnotes = {
     "1": [],
     "1.1": ["Added Computer saving"],
