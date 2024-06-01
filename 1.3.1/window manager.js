@@ -51,7 +51,8 @@ function dragElement(elmnt) {
         this.id = `${this.name}${this.process}`
         Window.processamt = Window.processamt + 1
         document.body.innerHTML += `<div id="${this.process}"><div id="${this.name}${this.process}"><div id="${this.name}${this.process}header"><button onclick="interpreter.evaluate(interpreter.parse('call close ${this.process}'))">Close</button></div><div id="${this.name}${this.process}body"></div></div></div>`
-        document.getElementById(this.id).style.border = "15"
+        document.getElementById(this.id).style.border = "1"
+        document.getElementById(this.id).style.borderColor = "black"
         dragElement(document.getElementById(`${this.name}${this.process}`))
         updatefm()
     }
