@@ -1,5 +1,5 @@
 const latestversion = "1.3.1";
-const latestdevversion = "1.3.1";
+const latestdevversion = "1.4";
 const patchnotes = {
     "1": [],
     "1.1": ["Added Computer saving"],
@@ -8,7 +8,8 @@ const patchnotes = {
     "1.2.2": ["Added functionality to new settings"],
     "1.2.3": ["Temp fixed issue where changing fontsize makes windows imposible to move better fix will be added in the future"],
     "1.3": ["Added taskbar with file manager more will be added in the futre","Added `To Be Added` list","Fixed an unknown issue where if you closed a file manager all new ones would break","Fixed issue where opening a text editor would remove the ability to drag file manager windows","Better fix for issue where changing fontsize makes windows imposible to move","Added dev mode"],
-    "1.3.1": ["Added better looking windows","Added Background images"]
+    "1.3.1": ["Added better looking windows","Added Background images","added langv2"],
+    "1.4": ["Added ability to delete files/folders through console useing the .delete() method"]
 };
 let newin = false;
 
