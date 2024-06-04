@@ -1,4 +1,4 @@
-const latestversion = "1.3.1";
+const latestversion = "1.4";
 const latestdevversion = "1.4";
 const patchnotes = {
     "1": [],
@@ -7,7 +7,7 @@ const patchnotes = {
     "1.2.1": ["Added more settings"],
     "1.2.2": ["Added functionality to new settings"],
     "1.2.3": ["Temp fixed issue where changing fontsize makes windows imposible to move better fix will be added in the future"],
-    "1.3": ["Added taskbar with file manager more will be added in the futre","Added `To Be Added` list","Fixed an unknown issue where if you closed a file manager all new ones would break","Fixed issue where opening a text editor would remove the ability to drag file manager windows","Better fix for issue where changing fontsize makes windows imposible to move","Added dev mode"],
+    "1.3": ["Added taskbar with file manager more will be added in the futre","Fixed an unknown issue where if you closed a file manager all new ones would break","Fixed issue where opening a text editor would remove the ability to drag file manager windows","Better fix for issue where changing fontsize makes windows imposible to move","Added dev mode"],
     "1.3.1": ["Added better looking windows","Added Background images","added langv2"],
     "1.4": ["Added ability to delete files/folders through console useing the .delete() method"]
 };
@@ -171,7 +171,6 @@ function update() {
         // Computer.storage[1].saddFile(new File("settings", "exe", "call js console.log('nothing yet...')"))
     }
     if (compareVersions(Computer.version, "1.3") < 0) {
-        Computer.storage[1].saddFile(new File("To Be Added", "exe", "call js tobeadded()"))
         Computer.dev = false
         // Computer.storage[1].saddFile(new File("settings", "exe", "call js console.log('nothing yet...')"))
     }
@@ -204,7 +203,6 @@ function devupdate() {
         // Computer.storage[1].saddFile(new File("settings", "exe", "call js console.log('nothing yet...')"))
     }
     if (compareVersions(Computer.version, "1.3") < 0) {
-        Computer.storage[1].saddFile(new File("To Be Added", "exe", "call js tobeadded()"))
         Computer.dev = false
         // Computer.storage[1].saddFile(new File("settings", "exe", "call js console.log('nothing yet...')"))
     }
