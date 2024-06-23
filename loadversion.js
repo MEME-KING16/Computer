@@ -24,18 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
         let computer = JSON.parse(localStorage.getItem("Computer"));
         loadStyle(`${computer.version}/style.css`)
         const scripts = [
-            `${computer.version}/utility.js`,
-            `${computer.version}/cpu.js`,
-            `${computer.version}/gpu.js`,
-            `${computer.version}/computer.js`,
-            `${computer.version}/window manager.js`,
-            `${computer.version}/tab.js`,
-            `${computer.version}/files.js`,
-            `${computer.version}/fm.js`,
-            `${computer.version}/lang.js`,
-            `${computer.version}/text.js`,
-            `${computer.version}/game.js`,
-            `${computer.version}/script.js`
+            `https://meme-king16.github.io/Computer/${computer.version}/utility.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/cpu.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/gpu.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/computer.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/window manager.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/tab.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/files.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/fm.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/lang.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/text.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/game.js`,
+            `https://meme-king16.github.io/Computer/${computer.version}/script.js`
         ];
         Promise.all(scripts.map(src => loadScript(src)))
             .then(() => {
