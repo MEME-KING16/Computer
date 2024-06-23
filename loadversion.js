@@ -1,16 +1,3 @@
-const latestversion = "1.4";
-const latestdevversion = "1.4.1-DEV-SNAPSHOT+20240606";
-const patchnotes = {
-    "1": [],
-    "1.1": ["Added Computer saving"],
-    "1.2": ["Added settings.txt in Computer/system", "Added autosave and show file extensions settings"],
-    "1.2.1": ["Added more settings"],
-    "1.2.2": ["Added functionality to new settings"],
-    "1.2.3": ["Temp fixed issue where changing font size makes windows impossible to move better fix will be added in the future"],
-    "1.3": ["Added taskbar with file manager more will be added in the future","Fixed an unknown issue where if you closed a file manager all new ones would break","Fixed issue where opening a text editor would remove the ability to drag file manager windows","Better fix for issue where changing font size makes windows impossible to move","Added dev mode"],
-    "1.3.1": ["Added better looking windows","Added Background images","added langv2"],
-    "1.4": ["Added ability to delete files/folders through console using the .delete() method"]
-};
 let newin = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,10 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const loadStyle = (href) => {
+            let script = document.createElement('link');
+            script.rel = 'stylesheet';
+            script.href = href
+            document.body.appendChild(script);
+    };
+
     if (localStorage.getItem("Computer") !== undefined && localStorage.getItem("Computer") !== null) {
         newin = false;
         let computer = JSON.parse(localStorage.getItem("Computer"));
-
+        loadStyle(`${computer.version}/style.css`)
         const scripts = [
             `${computer.version}/utility.js`,
             `${computer.version}/cpu.js`,
@@ -43,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
             `${computer.version}/game.js`,
             `${computer.version}/script.js`
         ];
-
         Promise.all(scripts.map(src => loadScript(src)))
             .then(() => {
                 function reviver(key, value) {
@@ -237,7 +230,7 @@ function devdowngrade(v) {
     location.reload();
 }
 
-function compareVersions(v1, v2) {
+/*function compareVersions(v1, v2) {
     const parseVersion = (version) => {
         const parts = String(version).split('.');
         return parts.map(part => {
@@ -259,4 +252,21 @@ function compareVersions(v1, v2) {
         if (v1Alpha < v2Alpha) return -1;
     }
     return 0;
+}*/
+
+
+function compareVersions(v1,v2) {
+if (allreleses.indexOf(v1) == -1) {
+    throw new Error("Version: "+v1+" does not exist")
+}
+if (allreleses.indexOf(v2) == -1) {
+    throw new Error("Version: "+v1+" does not exist")
+
+}
+if (allreleses.indexOf(v1) < allreleses.indexOf(v2)) {
+    return -1
+}
+if (allreleses.indexOf(v1) > allreleses.indexOf(v2)) {
+    return 1
+}
 }
