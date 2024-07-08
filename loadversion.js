@@ -22,8 +22,26 @@ document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("Computer") !== undefined && localStorage.getItem("Computer") !== null) {
         newin = false;
         let computer = JSON.parse(localStorage.getItem("Computer"));
-        loadStyle(`${computer.version}/style.css`)
-        const scripts = [
+        let scripts
+        if(computer.modded) {
+            loadStyle(`${computer.version}/style.css`)
+             scripts = [
+                `${computer.version}/utility.js`,
+                `${computer.version}/cpu.js`,
+                `${computer.version}/gpu.js`,
+                `${computer.version}/computer.js`,
+                `${computer.version}/window manager.js`,
+                `${computer.version}/tab.js`,
+                `${computer.version}/files.js`,
+                `${computer.version}/fm.js`,
+                `${computer.version}/lang.js`,
+                `${computer.version}/text.js`,
+                `${computer.version}/game.js`,
+                `${computer.version}/script.js`
+            ];
+        } else {
+        loadStyle(`https://meme-king16.github.io/Computer/${computer.version}/style.css`)
+         scripts = [
             `https://meme-king16.github.io/Computer/${computer.version}/utility.js`,
             `https://meme-king16.github.io/Computer/${computer.version}/cpu.js`,
             `https://meme-king16.github.io/Computer/${computer.version}/gpu.js`,
@@ -37,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `https://meme-king16.github.io/Computer/${computer.version}/game.js`,
             `https://meme-king16.github.io/Computer/${computer.version}/script.js`
         ];
+    }
         Promise.all(scripts.map(src => loadScript(src)))
             .then(() => {
                 function reviver(key, value) {
@@ -121,18 +140,18 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         newin = true;
         const scripts = [
-            `${latestversion}/utility.js`,
-            `${latestversion}/cpu.js`,
-            `${latestversion}/gpu.js`,
-            `${latestversion}/computer.js`,
-            `${latestversion}/window manager.js`,
-            `${latestversion}/tab.js`,
-            `${latestversion}/files.js`,
-            `${latestversion}/fm.js`,
-            `${latestversion}/lang.js`,
-            `${latestversion}/text.js`,
-            `${latestversion}/game.js`,
-            `${latestversion}/script.js`
+            `https://meme-king16.github.io/Computer/${latestversion}/utility.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/cpu.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/gpu.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/computer.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/window manager.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/tab.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/files.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/fm.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/lang.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/text.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/game.js`,
+            `https://meme-king16.github.io/Computer/${latestversion}/script.js`
         ];
 
         Promise.all(scripts.map(src => loadScript(src)))
@@ -203,6 +222,10 @@ function devupdate() {
         Computer.settings.system.backgroundimg = ""
         // Computer.storage[1].saddFile(new File("settings", "exe", "call js console.log('nothing yet...')"))
     }
+    if (compareVersions(Computer.version, "1.4.1-rc1") < 0) {
+        Computer.modded = false
+        // Computer.storage[1].saddFile(new File("settings", "exe", "call js console.log('nothing yet...')"))
+    }
     Computer.storage[0].contents[0].contents[0].contents = JSON.stringify(Computer.settings)
     Computer.version = latestdevversion;
     Computer.saveState();
@@ -260,7 +283,7 @@ if (allreleses.indexOf(v1) == -1) {
     throw new Error("Version: "+v1+" does not exist")
 }
 if (allreleses.indexOf(v2) == -1) {
-    throw new Error("Version: "+v1+" does not exist")
+    throw new Error("Version: "+v2+" does not exist")
 
 }
 if (allreleses.indexOf(v1) < allreleses.indexOf(v2)) {
