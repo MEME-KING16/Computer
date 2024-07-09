@@ -1,5 +1,5 @@
-const latestversion = "1.4";
-const latestdevversion = "1.4.1-rc1";
+const latestversion = "1.4.1";
+const latestdevversion = "1.4.1";
 const patchnotes = {
     "1": [],
     "1.1": ["Added Computer saving"],
@@ -12,5 +12,5 @@ const patchnotes = {
     "1.4": ["Added ability to delete files/folders through console using the .delete() method"]
 };
 
-let fullreleses = ["1","1.1","1.2","1.2.1","1.2.2","1.2.3","1.3","1.3.1","1.4"]
-let allreleses = ["1","1.1","1.2","1.2.1","1.2.2","1.2.3","1.3","1.3.1","1.4","1.4.1-DEV-SNAPSHOT+20240603","1.4.1-DEV-SNAPSHOT+20240605","1.4.1-DEV-SNAPSHOT+20240606","1.4.1-DEV-SNAPSHOT+20240623","1.4.1-rc1"]
+let fullreleses = ["1","1.1","1.2","1.2.1","1.2.2","1.2.3","1.3","1.3.1","1.4","1.4.1"]
+let allreleses = ["1","1.1","1.2","1.2.1","1.2.2","1.2.3","1.3","1.3.1","1.4","1.4.1-DEV-SNAPSHOT+20240603","1.4.1-DEV-SNAPSHOT+20240605","1.4.1-DEV-SNAPSHOT+20240606","1.4.1-DEV-SNAPSHOT+20240623","1.4.1-rc1","1.4.1"]
