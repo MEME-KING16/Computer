@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `${computer.version}/script.js`
             ];
             
-            if (compareVersions(computer.version,"1.5-DEV-SNAPSHOT+20240722")>= 0) {
+            if (compareVersions(computer.version,"1.5-DEV-SNAPSHOT+20240902")>= 0) {
                 scripts.push(`${computer.version}/img.js`)
             }
         } else {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `https://meme-king16.github.io/Computer/${computer.version}/game.js`,
             `https://meme-king16.github.io/Computer/${computer.version}/script.js`
         ];
-        if (compareVersions(computer.version,"1.5-DEV-SNAPSHOT+20240722")>= 0) {
+        if (compareVersions(computer.version,"1.5-DEV-SNAPSHOT+20240902")>= 0) {
             scripts.push(`https://meme-king16.github.io/Computer/${computer.version}/img.js`)
         }
     }
