@@ -39,8 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 `${computer.version}/game.js`,
                 `${computer.version}/script.js`
             ];
+            
+            if (compareVersions(computer.version,"1.5-DEV-SNAPSHOT+20240722")>= 0) {
+                scripts.push(`${computer.version}/img.js`)
+            }
         } else {
-        loadStyle(`https://meme-king16.github.io/Computer/${computer.version}/style.css`)
+        loadStyle(`${computer.version}/style.css`)
          scripts = [
             `https://meme-king16.github.io/Computer/${computer.version}/utility.js`,
             `https://meme-king16.github.io/Computer/${computer.version}/cpu.js`,
@@ -55,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
             `https://meme-king16.github.io/Computer/${computer.version}/game.js`,
             `https://meme-king16.github.io/Computer/${computer.version}/script.js`
         ];
+        if (compareVersions(computer.version,"1.5-DEV-SNAPSHOT+20240722")>= 0) {
+            scripts.push(`https://meme-king16.github.io/Computer/${computer.version}/img.js`)
+        }
     }
         Promise.all(scripts.map(src => loadScript(src)))
             .then(() => {
@@ -74,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     return value;
                 }
                 let computer = JSON.parse(localStorage.getItem("Computer"), reviver);
+                console.log(computer)
 
                 Computer.totalram = computer.totalram;
                 Computer.storage = computer.storage;
@@ -82,14 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 Computer.version = computer.version;
                 Computer.settings = computer.settings
                 if (compareVersions(computer.version, "1.2.2") >= 0) {
-                    document.body.style.backgroundColor = Computer.settings.system.backgroundColor
-                    document.body.style.fontSize = Computer.settings.system.fontSize
-                    document.body.style.color = Computer.settings.system.fontColor
-                    document.body.style.backgroundImage = `url('${Computer.settings.system.backgroundimg}')`
+                    //document.body.style.backgroundColor = Computer.settings.system.backgroundColor
+                    //document.body.style.fontSize = Computer.settings.system.fontSize
+                    //document.body.style.color = Computer.settings.system.fontColor
+                    //document.body.style.backgroundImage = `url('${Computer.settings.system.backgroundimg}')`
                 }
-
                 if (compareVersions(computer.version, "1.3") >= 0) {
                     Computer.dev = computer.dev
+                }
+
+                
+                if (compareVersions(computer.version, "1.4.1-rc1") >= 0) {
+                    Computer.modded = computer.modded
                 }
 
                 if (compareVersions(computer.version, latestversion) < 0) {
@@ -140,18 +152,19 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         newin = true;
         const scripts = [
-            `https://meme-king16.github.io/Computer/${latestversion}/utility.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/cpu.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/gpu.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/computer.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/window manager.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/tab.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/files.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/fm.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/lang.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/text.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/game.js`,
-            `https://meme-king16.github.io/Computer/${latestversion}/script.js`
+            `${latestversion}/utility.js`,
+            `${latestversion}/cpu.js`,
+            `${latestversion}/gpu.js`,
+            `${latestversion}/computer.js`,
+            `${latestversion}/window manager.js`,
+            `${latestversion}/tab.js`,
+            `${latestversion}/files.js`,
+            `${latestversion}/fm.js`,
+            `${latestversion}/lang.js`,
+            `${latestversion}/text.js`,
+            `${latestversion}/game.js`,
+            `${latestversion}/script.js`,
+            `${latestversion}/img.js`
         ];
 
         Promise.all(scripts.map(src => loadScript(src)))
@@ -291,5 +304,8 @@ if (allreleses.indexOf(v1) < allreleses.indexOf(v2)) {
 }
 if (allreleses.indexOf(v1) > allreleses.indexOf(v2)) {
     return 1
+}
+if (allreleses.indexOf(v1) == allreleses.indexOf(v2)) {
+    return 0
 }
 }
